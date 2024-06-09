@@ -1,0 +1,15 @@
+[project]
+name = "virtual_greenhouse"
+requires-python = ">3.10"
+version= "0.0.0"
+
+dependencies = [
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["virtual_greenhouse"]
