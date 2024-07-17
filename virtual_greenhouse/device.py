@@ -40,6 +40,6 @@ class Device:
         return {
             "name": self.name,
             "type": {
-                self.type: {}
+                str(self.type): {}
             }
         }
