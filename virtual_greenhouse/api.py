@@ -25,8 +25,6 @@ class GreenhouseApiClient:
 
         self.response = response
 
-        print(response.request.url)
-
         if self.fatal and not response.ok:
             raise Exception(f"Api call to {path} failed with code {response.status_code}")
 

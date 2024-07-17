@@ -6,7 +6,8 @@ version= "0.0.0"
 dependencies = [
     "requests",
     "arrow",
-    "behave"
+    "behave",
+    "selenium"
 ]
 
 [build-system]

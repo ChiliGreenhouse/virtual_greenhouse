@@ -1,3 +1,5 @@
+from selenium import webdriver
+
 from virtual_greenhouse.api import GreenhouseApiClient
 from virtual_greenhouse.device import Device, DeviceType
 
@@ -10,5 +12,12 @@ def before_all(context):
     context.api_client.create_device(context.valid_sensor)
     context.api_client.create_device(context.valid_actuator)
 
-    if hasattr(context, "tags") and "frontend" in context.tags:
-        ... # Init selenium
+def before_tag(context, tag):
+    if tag == "frontend":
+        context.driver = webdriver.Firefox()
+
+        context.frontend_url = "https://se-frontend.fly.dev"
+
+def after_tag(context, tag):
+    if tag == "frontend":
+        context.driver.quit()
